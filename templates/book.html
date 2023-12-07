@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books and author</title>
+</head>
+<body>
+    {% for book in books %}
+    <p>{{ book.name }}, {{ book.year_pub }}, {{ book.copies }}, {{ book.id_author }}</p>
+    {% endfor %}
+</body>
+</html>

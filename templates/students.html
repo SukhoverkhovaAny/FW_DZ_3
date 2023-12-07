@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <title> {{ title }}</title>
+</head>
+<body>
+    <p>{{ title }}</p>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Subject</th>
+            <th>Rating</th>
+        </tr>
+        {% for student in students %}
+        <tr>
+                <td>{{ student.name }}</td>
+                <td>{{ student.surname }}</td>
+                {% for rating in ratings %}
+                    {% if student.id == rating.student_id %}
+                        <td>{{ rating.subject }}</td>
+                        <td>{{ rating.rating }}</td>
+                    {% endif %}
+                {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>    
+</body>
+</html>
